@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -63,13 +64,13 @@ public class ExecuteERPtest {
 	 Thread.sleep(3000);
 	  WebElement companyName = driver.findElement(By.xpath("//*[@id=\"company-company_name\"]"));
 	  companyName.clear();
-	  companyName.sendKeys("ObsquraZone");
+	  companyName.sendKeys("xyzLabs");
 	  WebElement email = driver.findElement(By.id("company-company_email"));
 	  email.clear();
-	  email.sendKeys("obsquratest@gmail.com");
+	  email.sendKeys("xyztest@gmail.com");
 	  WebElement address = driver.findElement(By.id("company-company_address"));
 	  address.clear();
-	  address.sendKeys("Obsqura", Keys.ENTER, "Trivandrum", Keys.ENTER, "Kerala");
+	  address.sendKeys("xyzLabs", Keys.ENTER, "Trivandrum", Keys.ENTER, "Kerala");
 	  WebElement cleardata = driver.findElement(By.xpath("//*[@id=\"company-started_at-kvdate\"]/span[@title='Clear field']"));
 	  cleardata.click();
 	  WebElement date = driver.findElement(By.id("company-started_at"));
@@ -117,5 +118,9 @@ public class ExecuteERPtest {
 	 driver.findElement(By.xpath("//*[@id='w0']/table[1]/descendant::td/input[@value='admin']")).click();
 	 driver.findElement(By.xpath("//button[contains(text(),'Add')]")).click();
  }
- 
+
+ @AfterClass
+ public void closeBrowser() {
+	 driver.close();
+ }
 }
