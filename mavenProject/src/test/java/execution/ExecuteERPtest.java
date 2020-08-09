@@ -56,8 +56,6 @@ public class ExecuteERPtest {
 	  company.click();
 	  WebElement CompanyProfile = driver.findElement(By.xpath("//a[contains(text(),'Company Profile')]"));
 	  CompanyProfile.click();
-//	  Select dropdown = new Select(company);
-//	  dropdown.selectByVisibleText("Company Profile");
   }
   
  @Test(dependsOnMethods = "ClickOnCompanyProfile", groups = "CompanyProfile")
