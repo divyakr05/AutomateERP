@@ -39,7 +39,7 @@ public class ExecuteERPtest {
 		
 		for(int i=0; i<username.size(); i++) {
 			WebElement uname = driver.findElement(By.id("loginform-username"));
-			uname.click();
+			uname.click();	
 			String str = (String) username.get(i);
 			uname.sendKeys(str);
 			WebElement pword = driver.findElement(By.id("loginform-password"));
@@ -93,7 +93,7 @@ public class ExecuteERPtest {
 	 Thread.sleep(2000);
 	 WebElement company = driver.findElement(By.id("signupform-company"));
 	 Select dropdown = new Select(company);
-	 dropdown.selectByVisibleText("ObsquraZone");
+	 dropdown.selectByVisibleText("xyzLabs");
 	 WebElement branch = driver.findElement(By.xpath("//*[@id='signupform-branch']/div[43]/label"));
 	 branch.click();
 	 driver.findElement(By.id("signupform-email")).sendKeys("abc@gmail.com");
